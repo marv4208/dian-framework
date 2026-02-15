@@ -2,76 +2,96 @@ export default function Framework() {
   return (
     <main className="min-h-screen bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-primary mb-8">Framework Overview</h1>
+        <h1 className="text-4xl font-bold text-primary mb-8">DIAN Framework Overview</h1>
         
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">Executive Summary</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4">Integration-First Approach</h2>
             <p className="text-lg text-neutral-dark mb-4">
-              This framework provides a structured mapping between traditional banking service domains 
-              (as defined by the Banking Industry Architecture Network - BIAN) and decentralized finance 
-              (DeFi) protocols. It serves as a bridge for financial institutions, fintech companies, and 
-              DeFi protocols to understand architectural equivalencies, identify integration points, and 
-              assess gaps between centralized and decentralized financial systems.
+              DIAN (Decentralized Integration Architecture Network) provides practical patterns for 
+              connecting traditional finance systems with DeFi protocols. Rather than just mapping 
+              "what does what," we show you HOW to actually build the integration.
             </p>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">What is BIAN?</h2>
-            <p className="text-neutral-dark mb-4">
-              The Banking Industry Architecture Network (BIAN) is an independent, member-owned, non-profit 
-              organization that has developed a comprehensive service-oriented architecture (SOA) framework 
-              for the banking industry. BIAN defines over 300 "Service Domains" that represent discrete, 
-              reusable banking functions with standardized APIs.
-            </p>
-            <div className="bg-gray-50 p-6 rounded-lg mb-4">
-              <h3 className="text-xl font-bold text-secondary mb-3">Key BIAN Principles:</h3>
-              <ul className="list-disc list-inside space-y-2 text-neutral-dark">
-                <li><strong>Service-oriented decomposition:</strong> Each domain is a self-contained business capability</li>
-                <li><strong>Standardized interfaces:</strong> Consistent API patterns across domains</li>
-                <li><strong>Vendor neutrality:</strong> Enables plug-and-play integration</li>
-                <li><strong>Reduced complexity:</strong> Breaks monolithic core banking into modular components</li>
-              </ul>
+            <div className="bg-secondary text-white p-6 rounded-lg mb-6">
+              <h3 className="text-xl font-bold mb-3">Core Philosophy</h3>
+              <p className="opacity-90">
+                If you understand how APIs work, you can understand how oracles work. If you know 
+                webhooks, you can grasp event listeners. DIAN translates familiar CeFi patterns into 
+                DeFi equivalents with working examples.
+              </p>
             </div>
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">DeFi Architecture Stack</h2>
-            <p className="text-neutral-dark mb-4">
-              DeFi replicates and extends traditional financial services through a layered, composable architecture:
-            </p>
-            <div className="space-y-4">
-              <div className="border-l-4 border-secondary pl-4">
-                <h3 className="text-xl font-bold text-secondary">Layer 0/1: Settlement Layer</h3>
-                <p className="text-neutral-dark">Base blockchain providing security, consensus, and transaction finality (Ethereum, Solana, Arbitrum)</p>
-              </div>
-              <div className="border-l-4 border-secondary pl-4">
-                <h3 className="text-xl font-bold text-secondary">Layer 2: Asset Layer</h3>
-                <p className="text-neutral-dark">Digital representation of value via token standards (ERC-20, ERC-721, ERC-1155)</p>
-              </div>
-              <div className="border-l-4 border-secondary pl-4">
-                <h3 className="text-xl font-bold text-secondary">Layer 3: Protocol Layer</h3>
-                <p className="text-neutral-dark">Business logic via smart contracts (AMMs, lending pools, oracles, governance)</p>
-              </div>
-              <div className="border-l-4 border-secondary pl-4">
-                <h3 className="text-xl font-bold text-secondary">Layer 4: Application Layer</h3>
-                <p className="text-neutral-dark">User-facing interfaces (dApps, wallets, dashboards, aggregators)</p>
-              </div>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">8 Domain Clusters</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4">20+ Integration Patterns</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { num: 1, name: 'Payments & Settlement', desc: 'Stablecoins, L1/L2s, cross-border transfers' },
-                { num: 2, name: 'Lending & Credit', desc: 'Over-collateralized lending, flash loans' },
-                { num: 3, name: 'Trading & Market Making', desc: 'AMMs, DEXs, MEV protection' },
-                { num: 4, name: 'Custody & Asset Management', desc: 'Self-custody, multisigs, yield' },
-                { num: 5, name: 'Identity & Compliance', desc: 'KYC/AML, decentralized identity' },
-                { num: 6, name: 'Treasury & Liquidity', desc: 'DAO treasuries, reserves' },
-                { num: 7, name: 'Derivatives', desc: 'Perpetuals, options, synthetics' },
-                { num: 8, name: 'Governance', desc: 'DAOs, on-chain voting' },
+                {
+                  cefi: 'REST APIs',
+                  defi: 'The Graph Subgraphs',
+                  use: 'Query balances, transaction history',
+                },
+                {
+                  cefi: 'Webhooks',
+                  defi: 'Smart Contract Events',
+                  use: 'Real-time notifications of state changes',
+                },
+                {
+                  cefi: 'Database Transactions (ACID)',
+                  defi: 'Atomic Swaps',
+                  use: 'Ensure all-or-nothing execution',
+                },
+                {
+                  cefi: 'Message Queues (Kafka)',
+                  defi: 'Relayers',
+                  use: 'Asynchronous transaction processing',
+                },
+                {
+                  cefi: 'OAuth 2.0',
+                  defi: 'Wallet Connect',
+                  use: 'User authentication and authorization',
+                },
+                {
+                  cefi: 'ACH/SWIFT Networks',
+                  defi: 'Stablecoin Payment Rails',
+                  use: 'Cross-border value transfer',
+                },
+              ].map((pattern, i) => (
+                <div key={i} className="bg-white p-6 rounded-lg border-2 border-neutral-light hover:border-secondary transition-colors">
+                  <div className="grid grid-cols-2 gap-4 mb-4">
+                    <div className="border-l-4 border-neutral pl-3">
+                      <p className="text-sm text-neutral uppercase font-bold mb-1">CeFi</p>
+                      <p className="font-bold text-primary">{pattern.cefi}</p>
+                    </div>
+                    <div className="border-l-4 border-accent pl-3">
+                      <p className="text-sm text-neutral uppercase font-bold mb-1">DeFi</p>
+                      <p className="font-bold text-accent">{pattern.defi}</p>
+                    </div>
+                  </div>
+                  <p className="text-sm text-neutral-dark">
+                    <strong>Use Case:</strong> {pattern.use}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-primary mb-4">8 Integration Domain Clusters</h2>
+            <p className="text-neutral-dark mb-6">
+              Each cluster includes detailed integration patterns, architecture diagrams, code examples, 
+              and risk analysis:
+            </p>
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                { num: 1, name: 'Payments & Settlement', desc: 'Stablecoin integration, on/off ramps, cross-border' },
+                { num: 2, name: 'Lending & Credit', desc: 'Over-collateralized lending, RWA credit bridges' },
+                { num: 3, name: 'Trading & Market Making', desc: 'DEX integration, AMM patterns, MEV protection' },
+                { num: 4, name: 'Custody & Asset Management', desc: 'Institutional custody, multisig, yield aggregation' },
+                { num: 5, name: 'Identity & Compliance', desc: 'KYC/AML integration, on-chain attestations' },
+                { num: 6, name: 'Treasury & Liquidity', desc: 'DAO treasury, liquidity pool integration' },
+                { num: 7, name: 'Derivatives', desc: 'Perpetual swaps, options, synthetic asset integration' },
+                { num: 8, name: 'Governance', desc: 'DAO integration, on-chain voting automation' },
               ].map((domain) => (
                 <div key={domain.num} className="bg-white p-6 rounded-lg border border-neutral-light">
                   <h3 className="text-xl font-bold text-secondary mb-2">
@@ -83,6 +103,40 @@ export default function Framework() {
             </div>
           </section>
 
+          <section className="mb-12">
+            <h2 className="text-3xl font-bold text-primary mb-4">Methodology</h2>
+            <div className="space-y-6">
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-secondary mb-3">1. Pattern Identification</h3>
+                <p className="text-neutral-dark">
+                  Map familiar CeFi integration patterns (APIs, webhooks, message queues) to DeFi 
+                  equivalents (oracles, events, relayers). Document similarities and key differences.
+                </p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-secondary mb-3">2. Data Flow Analysis</h3>
+                <p className="text-neutral-dark">
+                  Trace how information moves through each pattern: authentication, request/response, 
+                  error handling, state synchronization, and rollback mechanisms.
+                </p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-secondary mb-3">3. Implementation Examples</h3>
+                <p className="text-neutral-dark">
+                  Provide working code: smart contract integrations, API adapters, middleware layers. 
+                  Show both simple (proof-of-concept) and production-grade implementations.
+                </p>
+              </div>
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-bold text-secondary mb-3">4. Risk & Cost Assessment</h3>
+                <p className="text-neutral-dark">
+                  Analyze security vulnerabilities, performance bottlenecks, cost trade-offs, and 
+                  regulatory considerations. Provide mitigation strategies for each identified risk.
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section>
             <h2 className="text-3xl font-bold text-primary mb-4">Next Steps</h2>
             <div className="flex flex-col sm:flex-row gap-4">
@@ -90,7 +144,7 @@ export default function Framework() {
                 href="/mappings"
                 className="inline-flex items-center justify-center px-6 py-3 bg-accent hover:bg-accent-light text-white rounded-md transition-colors font-medium"
               >
-                Explore Mappings
+                Explore Integration Patterns
               </a>
               <a
                 href="/case-studies"

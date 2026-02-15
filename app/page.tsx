@@ -9,26 +9,30 @@ export default function Home() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 sm:py-32">
           <div className="text-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
-              The BIAN for DeFi
+              DIAN Framework
             </h1>
+            <p className="text-2xl sm:text-3xl text-success font-semibold mb-4">
+              Decentralized Integration Architecture Network
+            </p>
             <p className="text-xl sm:text-2xl text-neutral-light max-w-3xl mx-auto mb-8">
-              A comprehensive framework mapping traditional banking service domains to decentralized finance protocols.
+              Practical integration patterns for connecting traditional finance systems with DeFi protocols.
             </p>
             <p className="text-lg text-neutral-light max-w-2xl mx-auto mb-12">
-              Bridge the gap between centralized and decentralized finance with structured architecture analysis, protocol comparisons, and integration patterns.
+              Inspired by BIAN's service-oriented architecture, adapted for the decentralized world. 
+              Learn how CeFi systems integrate with DeFi using real-world patterns, case studies, and technical implementations.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="/framework"
                 className="inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-foreground-inverse bg-accent hover:bg-accent-light transition-colors"
               >
-                Explore Framework
+                Explore Integration Patterns
               </Link>
               <Link
                 href="/mappings"
                 className="inline-flex items-center justify-center px-8 py-3 border-2 border-secondary text-base font-medium rounded-md text-foreground-inverse hover:bg-secondary hover:border-secondary transition-colors"
               >
-                View Mappings
+                View Domain Mappings
               </Link>
             </div>
           </div>
@@ -40,10 +44,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-primary mb-4">
-              Why This Framework Matters
+              Integration Over Translation
             </h2>
             <p className="text-lg text-neutral max-w-3xl mx-auto">
-              Built on BIAN's proven service-oriented architecture, adapted for the decentralized finance ecosystem.
+              Moving beyond "what maps to what" — learn HOW to actually connect CeFi and DeFi systems with proven patterns.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -53,7 +57,8 @@ export default function Home() {
                 For Financial Institutions
               </h3>
               <p className="text-neutral-dark">
-                Assess DeFi integration opportunities, evaluate protocols as infrastructure components, and understand architecture for compliance.
+                Step-by-step integration guides for connecting core banking systems to DeFi protocols. 
+                Understand data flow patterns, API equivalents, and risk mitigation strategies.
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg border-2 border-neutral-light hover:border-secondary transition-colors">
@@ -62,27 +67,81 @@ export default function Home() {
                 For DeFi Protocols
               </h3>
               <p className="text-neutral-dark">
-                Communicate functionality in banking terms, map to regulatory frameworks, and identify traditional finance integration points.
+                Learn how institutional systems work and design integration-friendly interfaces. 
+                Position your protocol for enterprise adoption with clear integration paths.
               </p>
             </div>
             <div className="bg-background p-6 rounded-lg border-2 border-neutral-light hover:border-secondary transition-colors">
               <div className="text-secondary text-4xl mb-4">🔧</div>
               <h3 className="text-xl font-bold text-primary mb-2">
-                For Consultants
+                For Integration Engineers
               </h3>
               <p className="text-neutral-dark">
-                Gap analysis for CeFi → DeFi migration, architecture design for hybrid systems, and compliance strategy navigation.
+                Practical code examples, architecture diagrams, and battle-tested patterns. 
+                Understand DeFi equivalents to familiar CeFi concepts (APIs, webhooks, transactions).
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Domain Overview */}
+      {/* Integration Pattern Example */}
       <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-primary mb-8 text-center">
+            Familiar Concepts, New Mechanisms
+          </h2>
+          <div className="bg-white p-8 rounded-lg border-2 border-secondary">
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-bold text-primary mb-4">Traditional Finance (CeFi)</h3>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-neutral pl-4">
+                    <p className="font-semibold text-secondary">REST APIs</p>
+                    <p className="text-sm text-neutral-dark">Query account balances, transaction history</p>
+                  </div>
+                  <div className="border-l-4 border-neutral pl-4">
+                    <p className="font-semibold text-secondary">Webhooks</p>
+                    <p className="text-sm text-neutral-dark">Receive payment notifications in real-time</p>
+                  </div>
+                  <div className="border-l-4 border-neutral pl-4">
+                    <p className="font-semibold text-secondary">Database Transactions</p>
+                    <p className="text-sm text-neutral-dark">ACID guarantees for data consistency</p>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-primary mb-4">Decentralized Finance (DeFi)</h3>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-accent pl-4">
+                    <p className="font-semibold text-accent">Oracles & The Graph</p>
+                    <p className="text-sm text-neutral-dark">Query on-chain data via subgraphs</p>
+                  </div>
+                  <div className="border-l-4 border-accent pl-4">
+                    <p className="font-semibold text-accent">Event Listeners</p>
+                    <p className="text-sm text-neutral-dark">Listen to smart contract events on-chain</p>
+                  </div>
+                  <div className="border-l-4 border-accent pl-4">
+                    <p className="font-semibold text-accent">Atomic Swaps</p>
+                    <p className="text-sm text-neutral-dark">Blockchain state transitions guarantee atomicity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="mt-6 text-center">
+              <Link href="/framework" className="text-secondary font-medium hover:text-accent transition-colors">
+                Explore 20+ Integration Patterns →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Domain Overview */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-primary mb-12 text-center">
-            8 Domain Clusters Mapped
+            8 Integration Domain Clusters
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
@@ -98,7 +157,7 @@ export default function Home() {
               <Link
                 key={domain.name}
                 href={domain.href}
-                className="bg-white p-6 rounded-lg border border-neutral-light hover:border-secondary hover:shadow-lg transition-all"
+                className="bg-background p-6 rounded-lg border border-neutral-light hover:border-secondary hover:shadow-lg transition-all"
               >
                 <div className="text-4xl mb-3">{domain.icon}</div>
                 <h3 className="text-lg font-semibold text-primary">
@@ -115,16 +174,16 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-success mb-2">300+</div>
-              <div className="text-lg text-neutral-light">BIAN Service Domains Analyzed</div>
+              <div className="text-4xl font-bold text-success mb-2">20+</div>
+              <div className="text-lg text-neutral-light">Integration Patterns Documented</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-success mb-2">50+</div>
-              <div className="text-lg text-neutral-light">DeFi Protocols Mapped</div>
+              <div className="text-lg text-neutral-light">DeFi Protocols Analyzed</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-success mb-2">8</div>
-              <div className="text-lg text-neutral-light">Core Domain Clusters</div>
+              <div className="text-lg text-neutral-light">Domain Clusters Mapped</div>
             </div>
           </div>
         </div>
@@ -134,10 +193,11 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-primary mb-4">
-            Ready to Bridge CeFi and DeFi?
+            Ready to Integrate CeFi and DeFi?
           </h2>
           <p className="text-lg text-neutral-dark mb-8 max-w-2xl mx-auto">
-            Whether you're integrating DeFi protocols into traditional finance or building the next generation of financial infrastructure, this framework provides the roadmap.
+            Whether you're building bridges between traditional finance and DeFi or architecting 
+            the next generation of financial infrastructure, DIAN provides the integration roadmap.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -150,7 +210,7 @@ export default function Home() {
               href="/case-studies"
               className="inline-flex items-center justify-center px-8 py-3 border-2 border-primary text-base font-medium rounded-md text-primary hover:bg-gray-50 transition-colors"
             >
-              View Case Studies
+              View Integration Case Studies
             </Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ export default function Navigation() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <span className="text-2xl font-bold text-foreground-inverse">
-                DeFi<span className="text-accent">BIAN</span>
+                <span className="text-accent">DIAN</span> Framework
               </span>
             </Link>
           </div>
@@ -24,7 +24,7 @@ export default function Navigation() {
               Framework
             </Link>
             <Link href="/mappings" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-              Mappings
+              Integration Patterns
             </Link>
             <Link href="/case-studies" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               Case Studies
@@ -82,7 +82,7 @@ export default function Navigation() {
               className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
             >
-              Mappings
+              Integration Patterns
             </Link>
             <Link
               href="/case-studies"

@@ -7,13 +7,13 @@ import Footer from "@/components/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "DeFi-BIAN Framework | Bridge CeFi to DeFi",
-  description: "A comprehensive framework mapping traditional banking service domains (BIAN) to decentralized finance protocols. Built by Marlena DeHart.",
-  keywords: ["DeFi", "BIAN", "blockchain", "banking", "fintech", "Web3", "cryptocurrency", "architecture"],
+  title: "DIAN Framework | Decentralized Integration Architecture Network",
+  description: "Practical integration patterns for connecting traditional finance systems with DeFi protocols. Learn how CeFi integrates with DeFi using real-world case studies and technical implementations.",
+  keywords: ["DeFi", "CeFi", "integration", "blockchain", "banking", "fintech", "Web3", "cryptocurrency", "architecture", "BIAN", "DIAN"],
   authors: [{ name: "Marlena DeHart" }],
   openGraph: {
-    title: "DeFi-BIAN Framework",
-    description: "Bridge centralized and decentralized finance with structured architecture analysis",
+    title: "DIAN Framework - Decentralized Integration Architecture Network",
+    description: "Practical patterns for integrating traditional finance with DeFi protocols",
     type: "website",
   },
 };

@@ -7,10 +7,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           <div>
             <h3 className="text-lg font-bold mb-4">
-              DeFi<span className="text-accent">BIAN</span>
+              <span className="text-accent">DIAN</span> Framework
             </h3>
             <p className="text-neutral-light text-sm">
-              Bridging centralized and decentralized finance through structured architecture analysis.
+              Decentralized Integration Architecture Network — practical patterns for connecting 
+              traditional finance with DeFi protocols.
             </p>
           </div>
 
@@ -24,7 +25,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/mappings" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-                  Domain Mappings
+                  Integration Patterns
                 </Link>
               </li>
               <li>
@@ -40,7 +41,7 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/about" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-                  About
+                  About DIAN
                 </Link>
               </li>
               <li>
@@ -65,12 +66,12 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="https://github.com/marlena-dehart" target="_blank" rel="noopener noreferrer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
+                <a href="https://github.com/marv4208" target="_blank" rel="noopener noreferrer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
                   GitHub
                 </a>
               </li>
               <li>
-                <a href="mailto:marlena@defibian.com" className="text-neutral-light hover:text-foreground-inverse transition-colors">
+                <a href="mailto:marlena@dianframework.com" className="text-neutral-light hover:text-foreground-inverse transition-colors">
                   Email
                 </a>
               </li>
@@ -79,7 +80,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 pt-8 border-t border-neutral-dark text-center text-sm text-neutral-light">
-          <p>© 2026 Marlena DeHart. Built with Next.js & Tailwind CSS.</p>
+          <p>© 2026 Marlena DeHart. DIAN Framework — Decentralized Integration Architecture Network</p>
           <p className="mt-2">Master's in Blockchain & Digital Currencies, University of Nicosia</p>
         </div>
       </div>
