@@ -169,13 +169,30 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Interactive Explorer */}
+      <section className="py-16 bg-accent text-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-4">🔍 Interactive Protocol Explorer</h2>
+          <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+            Explore 47+ BIAN → DeFi protocol mappings with live filtering by domain cluster, 
+            maturity, and gas efficiency. Search across protocols, patterns, and integration strategies.
+          </p>
+          <Link
+            href="/explorer"
+            className="inline-flex items-center justify-center px-8 py-3 bg-white text-accent hover:bg-gray-100 rounded-md transition-colors font-bold text-lg"
+          >
+            Launch Explorer →
+          </Link>
+        </div>
+      </section>
+
       {/* Stats */}
       <section className="py-16 bg-secondary text-foreground-inverse">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-success mb-2">20+</div>
-              <div className="text-lg text-neutral-light">Integration Patterns Documented</div>
+              <div className="text-4xl font-bold text-success mb-2">47+</div>
+              <div className="text-lg text-neutral-light">Protocol Mappings in Explorer</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-success mb-2">50+</div>

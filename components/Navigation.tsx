@@ -26,6 +26,9 @@ export default function Navigation() {
             <Link href="/mappings" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               Integration Patterns
             </Link>
+            <Link href="/explorer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
+              Explorer
+            </Link>
             <Link href="/case-studies" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               Case Studies
             </Link>
@@ -83,6 +86,13 @@ export default function Navigation() {
               onClick={() => setIsOpen(false)}
             >
               Integration Patterns
+            </Link>
+            <Link
+              href="/explorer"
+              className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Explorer
             </Link>
             <Link
               href="/case-studies"
