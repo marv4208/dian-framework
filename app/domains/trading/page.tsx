@@ -17,7 +17,7 @@ export default function TradingMarketMaking() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Trading Market</h3>
@@ -81,7 +81,7 @@ export default function TradingMarketMaking() {
                 </div>
 
                 <div className="bg-white/10 p-4 rounded">
-                  <h4 className="font-bold mb-2">vs BIAN Market Making:</h4>
+                  <h4 className="font-bold mb-2">vs Traditional Market Making:</h4>
                   <div className="grid md:grid-cols-2 gap-4 text-sm">
                     <div>
                       <p className="text-success mb-1">✓ Permissionless liquidity provision</p>
@@ -115,7 +115,7 @@ export default function TradingMarketMaking() {
                 </div>
 
                 <div className="mt-4 bg-gray-50 p-4 rounded">
-                  <p className="text-sm font-bold text-primary mb-2">vs BIAN Order Routing:</p>
+                  <p className="text-sm font-bold text-primary mb-2">vs Traditional Order Routing:</p>
                   <p className="text-sm text-neutral-dark">Both optimize execution, but DEX aggregators are transparent (on-chain) and don't require exchange relationships. Traditional smart order routing is opaque and venue-dependent.</p>
                 </div>
               </div>
@@ -149,7 +149,7 @@ export default function TradingMarketMaking() {
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="border-l-4 border-neutral pl-4">
-                  <h4 className="font-bold text-primary mb-3">Traditional (BIAN)</h4>
+                  <h4 className="font-bold text-primary mb-3">Traditional Banking</h4>
                   <ol className="list-decimal list-inside space-y-2 text-sm text-neutral-dark">
                     <li>Contact multiple exchanges for quotes</li>
                     <li>Negotiate best execution terms</li>

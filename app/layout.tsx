@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 export const metadata: Metadata = {
   title: "DIAN Framework | Decentralized Integration Architecture Network",
   description: "Practical integration patterns for connecting traditional finance systems with DeFi protocols. Learn how CeFi integrates with DeFi using real-world case studies and technical implementations.",
-  keywords: ["DeFi", "CeFi", "integration", "blockchain", "banking", "fintech", "Web3", "cryptocurrency", "architecture", "BIAN", "DIAN"],
+  keywords: ["DeFi", "CeFi", "integration", "blockchain", "banking", "fintech", "Web3", "cryptocurrency", "architecture", "DIAN"],
   authors: [{ name: "Marlena DeHart" }],
   openGraph: {
     title: "DIAN Framework - Decentralized Integration Architecture Network",

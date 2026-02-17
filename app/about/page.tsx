@@ -13,7 +13,7 @@ export default function About() {
               integration patterns.
             </p>
             <p className="text-lg text-neutral-dark">
-              Inspired by BIAN's service-oriented banking architecture, DIAN goes beyond mapping to provide 
+              Built on proven service-oriented banking architecture principles, DIAN goes beyond mapping to provide 
               practical, implementable integration strategies. We focus on HOW systems connect, not just 
               WHAT they do differently.
             </p>
@@ -91,16 +91,16 @@ export default function About() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-4">Why BIAN-Inspired?</h2>
+            <h2 className="text-3xl font-bold text-primary mb-4">Why DIAN?</h2>
             <p className="text-neutral-dark mb-4">
-              The Banking Industry Architecture Network (BIAN) established the global standard for 
-              service-oriented banking architecture, with over 300 defined service domains used by major 
-              financial institutions worldwide.
+              Traditional banking systems are built on service-oriented architectures with well-defined 
+              service domains used by financial institutions worldwide. DIAN brings this proven 
+              architectural thinking to the decentralized world.
             </p>
             <p className="text-neutral-dark">
-              DIAN adapts BIAN's proven methodology to the decentralized world, creating a common language 
-              and integration framework between traditional finance and blockchain-based systems. This 
-              enables better evaluation, integration, and compliance strategies.
+              By creating a common language and structured integration framework between traditional finance 
+              and blockchain-based systems, DIAN enables better evaluation, integration planning, and 
+              compliance strategies for organizations navigating the CeFi to DeFi transition.
             </p>
           </section>
 

@@ -17,7 +17,7 @@ export default function Governance() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Corporate Governance</h3>
@@ -121,7 +121,7 @@ export default function Governance() {
               
               <div className="grid md:grid-cols-2 gap-6 mb-6">
                 <div className="border-l-4 border-neutral pl-4">
-                  <h4 className="font-bold text-primary mb-3">Traditional (BIAN)</h4>
+                  <h4 className="font-bold text-primary mb-3">Traditional Banking</h4>
                   <ul className="text-sm text-neutral-dark space-y-2">
                     <li><strong>Policy changes:</strong> Board approves → legal drafts → manual implementation</li>
                     <li><strong>Fund disbursement:</strong> Approval workflow → bank transfer → reconciliation</li>

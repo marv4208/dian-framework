@@ -17,7 +17,7 @@ export default function LendingCredit() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Loan</h3>
@@ -62,7 +62,7 @@ export default function LendingCredit() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold mb-2">vs BIAN Loan:</h4>
+                    <h4 className="font-bold mb-2">vs Traditional Loan:</h4>
                     <ul className="space-y-1 text-sm">
                       <li className="text-success">✓ Instant approval (algorithmic)</li>
                       <li className="text-success">✓ Permissionless (no KYC)</li>
@@ -88,7 +88,7 @@ export default function LendingCredit() {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary mb-2">vs BIAN Credit Management:</h4>
+                    <h4 className="font-bold text-primary mb-2">vs Traditional Credit Management:</h4>
                     <ul className="space-y-1 text-sm text-neutral-dark">
                       <li className="text-success">✓ Real-time risk monitoring</li>
                       <li className="text-success">✓ Transparent liquidations</li>
@@ -195,7 +195,7 @@ export default function LendingCredit() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th className="px-4 py-3 text-left text-sm font-bold text-primary">Function</th>
-                    <th className="px-4 py-3 text-left text-sm font-bold text-primary">BIAN Domain</th>
+                    <th className="px-4 py-3 text-left text-sm font-bold text-primary">Banking Service</th>
                     <th className="px-4 py-3 text-left text-sm font-bold text-primary">DeFi Protocol</th>
                     <th className="px-4 py-3 text-left text-sm font-bold text-primary">Key Difference</th>
                   </tr>

@@ -50,9 +50,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="https://portal.bian.org/" target="_blank" rel="noopener noreferrer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-                  BIAN Portal
-                </a>
+                <Link href="/explorer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
+                  Protocol Explorer
+                </Link>
               </li>
             </ul>
           </div>

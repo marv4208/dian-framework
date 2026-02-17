@@ -473,7 +473,7 @@ export default function Explorer() {
 
         <h1 className="text-4xl font-bold text-primary mb-4">Integration Protocol Explorer</h1>
         <p className="text-xl text-neutral-dark mb-8">
-          Interactive mapping of {mappingData.length} BIAN service domains to DeFi protocols
+          Interactive mapping of {mappingData.length} traditional banking services to DeFi protocols
         </p>
 
         {/* Filters */}
@@ -484,7 +484,7 @@ export default function Explorer() {
               <label className="block text-sm font-bold text-primary mb-2">Search</label>
               <input
                 type="text"
-                placeholder="Search BIAN domain, DeFi protocol, pattern..."
+                placeholder="Search banking service, DeFi protocol, pattern..."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 className="w-full px-4 py-2 border border-neutral-light rounded-md focus:outline-none focus:ring-2 focus:ring-secondary"
@@ -537,7 +537,7 @@ export default function Explorer() {
               <thead className="bg-secondary text-white">
                 <tr>
                   <th className="px-4 py-3 text-left text-sm font-bold cursor-pointer hover:bg-primary" onClick={() => setSortBy('bianDomain')}>
-                    BIAN Service Domain {sortBy === 'bianDomain' && '↕'}
+                    Banking Service {sortBy === 'bianDomain' && '↕'}
                   </th>
                   <th className="px-4 py-3 text-left text-sm font-bold cursor-pointer hover:bg-primary" onClick={() => setSortBy('defiProtocol')}>
                     DeFi Protocol {sortBy === 'defiProtocol' && '↕'}

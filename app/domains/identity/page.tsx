@@ -17,7 +17,7 @@ export default function IdentityCompliance() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Customer/Party Reference Data Management</h3>
@@ -105,7 +105,7 @@ export default function IdentityCompliance() {
               
               <div className="space-y-4">
                 <div className="bg-gray-50 p-4 rounded">
-                  <h4 className="font-bold text-primary mb-2">Traditional (BIAN):</h4>
+                  <h4 className="font-bold text-primary mb-2">Traditional Banking:</h4>
                   <p className="text-sm text-neutral-dark">Bank collects KYC docs → verifies with ID service → stores in centralized DB → periodic re-verification</p>
                 </div>
 

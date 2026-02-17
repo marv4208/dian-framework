@@ -17,7 +17,7 @@ export default function Derivatives() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Derivatives Trading</h3>

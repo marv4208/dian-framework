@@ -17,7 +17,7 @@ export default function CustodyAssetManagement() {
 
         <div className="prose max-w-none">
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-primary mb-6">BIAN Service Domains Covered</h2>
+            <h2 className="text-3xl font-bold text-primary mb-6">Traditional Banking Services Covered</h2>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg border border-neutral-light">
                 <h3 className="text-xl font-bold text-secondary mb-2">Custody Administration</h3>
@@ -74,7 +74,7 @@ export default function CustodyAssetManagement() {
                 </div>
 
                 <div className="bg-success p-4 rounded">
-                  <p className="font-bold text-primary mb-2">✓ vs BIAN Custody:</p>
+                  <p className="font-bold text-primary mb-2">✓ vs Traditional Custody:</p>
                   <p className="text-sm text-neutral-dark">Multisigs provide institutional controls (approval workflows, spending limits) without requiring a trusted custodian. No counterparty risk.</p>
                 </div>
               </div>
