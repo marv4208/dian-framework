@@ -14,12 +14,12 @@ export default function BlogPage() {
   return (
     <main className="min-h-screen bg-[#F5F3F0]">
       {/* Hero Section */}
-      <section className="bg-[#F5F3F0] pt-16 pb-12 border-b border-gray-300">
+      <section className="bg-[#F5F3F0] pt-12 sm:pt-16 pb-8 sm:pb-12 border-b border-gray-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="font-serif text-6xl sm:text-7xl font-bold text-primary mb-6">
+          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
             The Journal
           </h1>
-          <p className="text-xl text-secondary max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-secondary max-w-3xl mx-auto leading-relaxed px-4">
             Your gateway to insights, strategies, and inspiration to elevate CeFi ↔ DeFi integration—with a fun mix of technical depth and everyday innovation.
           </p>
         </div>
@@ -29,15 +29,15 @@ export default function BlogPage() {
       <CategoryFilter />
 
       {/* Article Grid */}
-      <section className="py-16">
+      <section className="py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {posts.length === 0 ? (
-            <div className="text-center py-16 bg-white rounded-lg">
-              <p className="text-xl text-secondary mb-4">No articles yet. Check back soon!</p>
-              <p className="text-neutral">Daily CeFi ↔ DeFi integration insights coming soon.</p>
+            <div className="text-center py-12 sm:py-16 bg-white rounded-lg">
+              <p className="text-lg sm:text-xl text-secondary mb-4">No articles yet. Check back soon!</p>
+              <p className="text-sm sm:text-base text-neutral">Daily CeFi ↔ DeFi integration insights coming soon.</p>
             </div>
           ) : (
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
               {posts.map((post) => (
                 <Link
                   key={post.slug}
@@ -121,12 +121,12 @@ export default function BlogPage() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="py-16 bg-white">
+      <section className="py-12 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-4xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Subscribe to DIAN Insights
           </h2>
-          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-secondary mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Get daily CeFi ↔ DeFi integration analysis, protocol updates, and exclusive insights delivered to your inbox.
           </p>
           <NewsletterSignup variant="featured" />
@@ -134,17 +134,17 @@ export default function BlogPage() {
       </section>
 
       {/* Footer CTA */}
-      <section className="py-16 bg-[#F5F3F0]">
+      <section className="py-12 sm:py-16 bg-[#F5F3F0]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-serif text-4xl font-bold text-primary mb-4">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-primary mb-3 sm:mb-4">
             Need Custom Integration Strategy?
           </h2>
-          <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-secondary mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
             Work with an expert to design your CeFi ↔ DeFi integration roadmap.
           </p>
           <Link
             href="/consulting"
-            className="inline-block px-8 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors"
+            className="inline-block px-6 sm:px-8 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors text-sm sm:text-base"
           >
             Explore Consulting Services
           </Link>

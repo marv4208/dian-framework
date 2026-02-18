@@ -26,7 +26,7 @@ export default function NewsletterSignup({ variant = 'inline' }: NewsletterSignu
 
   if (variant === 'featured') {
     return (
-      <form onSubmit={handleSubmit} className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} className="max-w-md mx-auto px-4">
         <div className="flex flex-col sm:flex-row gap-3">
           <input
             type="email"
@@ -34,12 +34,12 @@ export default function NewsletterSignup({ variant = 'inline' }: NewsletterSignu
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
-            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+            className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm sm:text-base"
           />
           <button
             type="submit"
             disabled={status === 'loading'}
-            className="px-6 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors disabled:opacity-50"
+            className="px-6 py-3 bg-accent hover:bg-accent-light text-white rounded-lg font-medium transition-colors disabled:opacity-50 whitespace-nowrap text-sm sm:text-base"
           >
             {status === 'loading' ? 'Subscribing...' : 'Subscribe'}
           </button>
@@ -50,7 +50,7 @@ export default function NewsletterSignup({ variant = 'inline' }: NewsletterSignu
         {status === 'error' && (
           <p className="mt-3 text-sm text-error text-center">{message}</p>
         )}
-        <p className="text-sm mt-4 text-secondary text-center">No spam. Unsubscribe anytime.</p>
+        <p className="text-xs sm:text-sm mt-4 text-secondary text-center">No spam. Unsubscribe anytime.</p>
       </form>
     );
   }

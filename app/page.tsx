@@ -4,29 +4,29 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section - Clean & Professional */}
-      <section className="bg-white pt-20 pb-16">
+      <section className="bg-white pt-12 sm:pt-16 md:pt-20 pb-12 sm:pb-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-primary mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-primary mb-4 sm:mb-6 leading-tight">
               DIAN Framework
             </h1>
-            <p className="text-2xl sm:text-3xl text-accent font-semibold mb-6">
+            <p className="text-xl sm:text-2xl md:text-3xl text-accent font-semibold mb-4 sm:mb-6">
               Decentralized Integration Architecture Network
             </p>
-            <p className="text-xl text-secondary mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-secondary mb-6 sm:mb-8 leading-relaxed px-4">
               The integration framework for connecting traditional banking services with DeFi protocols. 
               Practical patterns and technical implementations for teams building the future of finance.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
               <Link
                 href="/framework"
-                className="btn btn-primary text-lg px-8"
+                className="btn btn-primary text-base sm:text-lg px-6 sm:px-8 py-3"
               >
                 Explore Framework
               </Link>
               <Link
                 href="/blog"
-                className="btn btn-outline text-lg px-8"
+                className="btn btn-outline text-base sm:text-lg px-6 sm:px-8 py-3"
               >
                 Read the Blog
               </Link>
@@ -36,17 +36,17 @@ export default function Home() {
       </section>
 
       {/* Value Proposition - Clean Grid */}
-      <section className="section bg-gray-50">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-primary mb-4">
+      <section className="py-12 sm:py-16 md:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-3 sm:mb-4 px-4">
               Integration Over Translation
             </h2>
-            <p className="text-xl text-secondary max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-secondary max-w-3xl mx-auto px-4">
               Learn HOW to actually connect CeFi and DeFi systems with proven patterns
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <div className="card hover:shadow-xl">
               <div className="text-accent text-5xl mb-4">🏦</div>
               <h3 className="text-xl font-bold text-primary mb-3">
