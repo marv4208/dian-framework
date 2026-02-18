@@ -20,17 +20,14 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <Link href="/blog" className="text-neutral-light hover:text-foreground-inverse transition-colors">
+              Blog
+            </Link>
             <Link href="/framework" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               Framework
             </Link>
-            <Link href="/mappings" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-              Integration Patterns
-            </Link>
             <Link href="/explorer" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               Explorer
-            </Link>
-            <Link href="/case-studies" className="text-neutral-light hover:text-foreground-inverse transition-colors">
-              Case Studies
             </Link>
             <Link href="/about" className="text-neutral-light hover:text-foreground-inverse transition-colors">
               About
@@ -74,6 +71,13 @@ export default function Navigation() {
         <div className="md:hidden border-t border-neutral-dark">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <Link
+              href="/blog"
+              className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Blog
+            </Link>
+            <Link
               href="/framework"
               className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
@@ -81,25 +85,11 @@ export default function Navigation() {
               Framework
             </Link>
             <Link
-              href="/mappings"
-              className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Integration Patterns
-            </Link>
-            <Link
               href="/explorer"
               className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Explorer
-            </Link>
-            <Link
-              href="/case-studies"
-              className="block px-3 py-2 text-neutral-light hover:text-foreground-inverse hover:bg-primary-light rounded-md transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              Case Studies
             </Link>
             <Link
               href="/about"
