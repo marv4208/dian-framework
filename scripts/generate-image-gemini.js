@@ -2,28 +2,19 @@
 
 /**
  * DIAN Framework - Gemini Image Generation (Imagen 3)
+ * Uses Google Cloud Vertex AI REST API
  * 
  * Usage:
- *   npm run generate-image "article-title"
- *   npm run generate-image -- --batch
- * 
- * Requirements:
- *   - Google Cloud project with Vertex AI API enabled
- *   - npm install @google-cloud/vertexai sharp dotenv
+ *   npm run generate-image-gemini "article-title"
+ *   npm run generate-image-gemini -- --batch
  */
 
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
-
-// Check for Google Vertex AI package
-let VertexAI;
-try {
-  VertexAI = require('@google-cloud/vertexai').VertexAI;
-} catch (e) {
-  console.error('❌ Google Vertex AI package not installed. Run: npm install @google-cloud/vertexai sharp dotenv');
-  process.exit(1);
-}
+const { exec } = require('child_process');
+const { promisify } = require('util');
+const execAsync = promisify(exec);
 
 // Load environment variables
 require('dotenv').config({ path: path.join(__dirname, '../.env.local') });
@@ -37,16 +28,10 @@ if (!PROJECT_ID) {
   process.exit(1);
 }
 
-// Initialize Vertex AI
-const vertexAI = new VertexAI({
-  project: PROJECT_ID,
-  location: LOCATION,
-});
-
 // Style guidelines
 const STYLE_GUIDE = `Professional minimal illustration with clean geometric shapes, blue (#14A5E9) and teal (#2E865F) gradient background, abstract technical visualization, modern fintech aesthetic, landscape format, no text or logos, no faces, high quality`;
 
-// Article prompts mapping
+// Article prompts
 const ARTICLE_PROMPTS = {
   'aave-v4-institutional-features': 'DeFi lending protocol with institutional-grade security features, smart contract visualization',
   'circle-usdc-bank-integration': 'Traditional bank vault connected to blockchain network via bridge, stablecoin flow',
@@ -70,19 +55,79 @@ function generatePromptFromTitle(title) {
   return `${title}, ${STYLE_GUIDE}`;
 }
 
-function downloadImage(url, filepath) {
+async function getAccessToken() {
+  try {
+    // Try full path first (Homebrew location)
+    const { stdout } = await execAsync('/opt/homebrew/bin/gcloud auth print-access-token');
+    return stdout.trim();
+  } catch (error) {
+    // Fallback to PATH
+    try {
+      const { stdout } = await execAsync('gcloud auth print-access-token');
+      return stdout.trim();
+    } catch (fallbackError) {
+      throw new Error('Failed to get access token. Make sure gcloud CLI is installed and authenticated.\nRun: gcloud auth application-default login');
+    }
+  }
+}
+
+async function callImagenAPI(prompt) {
+  const accessToken = await getAccessToken();
+  
+  // Use Imagen 3 (latest model)
+  const endpoint = `https://${LOCATION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/publishers/google/models/imagen-3.0-generate-001:predict`;
+  
+  const requestBody = {
+    instances: [{
+      prompt: prompt
+    }],
+    parameters: {
+      sampleCount: 1,
+      aspectRatio: "16:9",
+      safetyFilterLevel: "block_some",
+      personGeneration: "dont_allow"
+    }
+  };
+
   return new Promise((resolve, reject) => {
-    const file = fs.createWriteStream(filepath);
-    https.get(url, (response) => {
-      response.pipe(file);
-      file.on('finish', () => {
-        file.close();
-        resolve();
+    const postData = JSON.stringify(requestBody);
+    
+    const options = {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${accessToken}`,
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(postData)
+      }
+    };
+
+    const req = https.request(endpoint, options, (res) => {
+      let data = '';
+      
+      res.on('data', (chunk) => {
+        data += chunk;
       });
-    }).on('error', (err) => {
-      fs.unlink(filepath, () => {});
-      reject(err);
+      
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          try {
+            const response = JSON.parse(data);
+            resolve(response);
+          } catch (e) {
+            reject(new Error(`Failed to parse response: ${e.message}`));
+          }
+        } else {
+          reject(new Error(`API request failed with status ${res.statusCode}: ${data}`));
+        }
+      });
     });
+
+    req.on('error', (error) => {
+      reject(new Error(`Request failed: ${error.message}`));
+    });
+
+    req.write(postData);
+    req.end();
   });
 }
 
@@ -109,28 +154,15 @@ async function generateImage(title, slug) {
   console.log(`🔮 Prompt: ${prompt.substring(0, 100)}...`);
   
   try {
-    console.log('⏳ Calling Google Imagen 3 API...');
+    console.log('⏳ Calling Google Imagen API...');
     
-    const imageGenerationModel = vertexAI.preview.getGenerativeModel({
-      model: 'imagen-3.0-generate-001',
-    });
-
-    const result = await imageGenerationModel.generateImages({
-      prompt: prompt,
-      numberOfImages: 1,
-      aspectRatio: '16:9',
-      safetySettings: [{
-        category: 'HARM_CATEGORY_DANGEROUS_CONTENT',
-        threshold: 'BLOCK_ONLY_HIGH',
-      }],
-    });
+    const response = await callImagenAPI(prompt);
     
-    const generatedImages = result.response.predictions;
-    if (!generatedImages || generatedImages.length === 0) {
+    if (!response.predictions || response.predictions.length === 0) {
       throw new Error('No images generated');
     }
 
-    const imageData = generatedImages[0].bytesBase64Encoded;
+    const imageData = response.predictions[0].bytesBase64Encoded;
     const filename = `${slug}.jpg`;
     const filepath = path.join(__dirname, '../public/images/blog', filename);
     
@@ -187,10 +219,10 @@ async function generateBatch() {
     const result = await generateImage(article.title, article.slug);
     results.push({ ...article, ...result });
     
-    // Rate limiting: wait 5 seconds between requests
+    // Rate limiting: wait 90 seconds between requests (Google Cloud quota - safe buffer)
     if (articles.indexOf(article) < articles.length - 1) {
-      console.log('\n⏱️  Waiting 5 seconds (rate limiting)...\n');
-      await new Promise(resolve => setTimeout(resolve, 5000));
+      console.log('\n⏱️  Waiting 90 seconds (Google Cloud rate limit)...\n');
+      await new Promise(resolve => setTimeout(resolve, 90000));
     }
   }
   
@@ -219,19 +251,17 @@ async function main() {
 🎨 DIAN Framework - Gemini Image Generator
 
 Usage:
-  npm run generate-image "Article Title"
-  npm run generate-image -- --batch
+  npm run generate-image-gemini "Article Title"
+  npm run generate-image-gemini -- --batch
+
+Setup:
+  1. Install gcloud CLI: https://cloud.google.com/sdk/docs/install
+  2. Authenticate: gcloud auth application-default login
+  3. Set project: gcloud config set project ${PROJECT_ID}
 
 Examples:
-  npm run generate-image "Chainlink CCIP Integration"
-  npm run generate-image -- --batch
-
-Requirements:
-  1. Google Cloud project with Vertex AI API enabled
-  2. Add GOOGLE_CLOUD_PROJECT to .env.local
-  3. Install: npm install @google-cloud/vertexai sharp dotenv
-
-Setup Guide: https://cloud.google.com/vertex-ai/docs/generative-ai/image/generate-images
+  npm run generate-image-gemini "Chainlink CCIP Integration"
+  npm run generate-image-gemini -- --batch
     `);
   }
 }

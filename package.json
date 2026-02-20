@@ -8,20 +8,26 @@
     "start": "next start",
     "lint": "eslint",
     "generate-image": "node scripts/generate-image.js",
+    "generate-image-gemini": "node scripts/generate-image-gemini.js",
+    "generate-remaining": "node scripts/generate-remaining-images.js && node scripts/update-mdx-images.js",
     "update-mdx-images": "node scripts/update-mdx-images.js",
-    "batch-images": "node scripts/generate-image.js --batch && node scripts/update-mdx-images.js"
+    "batch-images": "node scripts/generate-image.js --batch && node scripts/update-mdx-images.js",
+    "batch-images-gemini": "node scripts/generate-image-gemini.js --batch && node scripts/update-mdx-images.js"
   },
   "dependencies": {
+    "@google-cloud/vertexai": "^1.10.0",
     "@mdx-js/loader": "^3.1.1",
     "@mdx-js/react": "^3.1.1",
     "@next/mdx": "^16.1.6",
     "@tailwindcss/typography": "^0.5.19",
+    "dotenv": "^17.3.1",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",
     "next-mdx-remote": "^6.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "reading-time": "^1.5.0"
+    "reading-time": "^1.5.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
