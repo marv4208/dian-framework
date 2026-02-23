@@ -11,8 +11,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
   
   if (!post) {
     return {
@@ -38,15 +39,16 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-export default function BlogPost({ params }: { params: { slug: string } }) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
   }
 
   const relatedPosts = getAllPosts()
-    .filter((p) => p.slug !== post.slug && p.category === post.category)
+    .filter((p) => p.slug !== slug && p.category === post.category)
     .slice(0, 3);
 
   return (
@@ -145,7 +147,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
               <p className="text-sm font-bold text-primary mb-3">Share this article</p>
               <div className="flex gap-3">
                 <a
-                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://dianframework.com/blog/${post.slug}`)}`}
+                  href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.title)}&url=${encodeURIComponent(`https://dianframework.com/blog/${slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-neutral-dark rounded-lg transition-colors text-sm font-medium"
@@ -153,7 +155,7 @@ export default function BlogPost({ params }: { params: { slug: string } }) {
                   Twitter
                 </a>
                 <a
-                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://dianframework.com/blog/${post.slug}`)}`}
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(`https://dianframework.com/blog/${slug}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-neutral-dark rounded-lg transition-colors text-sm font-medium"

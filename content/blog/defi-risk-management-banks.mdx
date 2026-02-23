@@ -284,7 +284,7 @@ print(f"Estimated slippage: {slippage * 100:.2f}%")
 # Output: Estimated slippage: 2.50%
 ```
 
-**Risk metric:** Maximum position size = 2% of protocol TVL (to ensure <3% exit slippage).
+**Risk metric:** Maximum position size = 2% of protocol TVL (to ensure under 3% exit slippage).
 
 ---
 
@@ -572,7 +572,7 @@ contract TreasuryWorkflow {
 
 1. **VAR (Value at Risk):** Daily/weekly at 95% and 99% confidence
 2. **Stress VAR:** Under defined stress scenarios
-3. **Liquidity profile:** Days to liquidate (at <3% slippage)
+3. **Liquidity profile:** Days to liquidate (at under 3% slippage)
 4. **Protocol ratings:** Credit score for each protocol exposure
 5. **Health factors:** Real-time liquidation risk
 6. **Correlation matrix:** Portfolio diversification
