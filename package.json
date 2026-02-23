@@ -12,7 +12,8 @@
     "generate-remaining": "node scripts/generate-remaining-images.js && node scripts/update-mdx-images.js",
     "update-mdx-images": "node scripts/update-mdx-images.js",
     "batch-images": "node scripts/generate-image.js --batch && node scripts/update-mdx-images.js",
-    "batch-images-gemini": "node scripts/generate-image-gemini.js --batch && node scripts/update-mdx-images.js"
+    "batch-images-gemini": "node scripts/generate-image-gemini.js --batch && node scripts/update-mdx-images.js",
+    "auto-publish": "node scripts/auto-publish-article.js"
   },
   "dependencies": {
     "@google-cloud/vertexai": "^1.10.0",
