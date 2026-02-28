@@ -33,3 +33,10 @@ Article: Stablecoin Yield Strategies for Corporate Treasuries
 Filename: corporate-stablecoin-yield-strategies.jpg
 Prompt:
 Professional blockchain integration architecture, corporate network connecting to DeFi protocols, geometric data flows, blue teal gradient, clean minimal fintech aesthetic, no text --ar 16:9 --style raw --v 6
+
+
+=== 2026-02-28T15:00:05.150Z ===
+Article: Institutional Adoption of DeFi Lending: Q1 2026 Analysis
+Filename: institutional-defi-lending-q1-2026.jpg
+Prompt:
+Professional blockchain integration architecture, corporate network connecting to DeFi protocols, geometric data flows, blue teal gradient, clean minimal fintech aesthetic, no text --ar 16:9 --style raw --v 6
