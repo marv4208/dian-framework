@@ -40,3 +40,10 @@ Article: Institutional Adoption of DeFi Lending: Q1 2026 Analysis
 Filename: institutional-defi-lending-q1-2026.jpg
 Prompt:
 Professional blockchain integration architecture, corporate network connecting to DeFi protocols, geometric data flows, blue teal gradient, clean minimal fintech aesthetic, no text --ar 16:9 --style raw --v 6
+
+
+=== 2026-03-01T15:00:38.991Z ===
+Article: Layer 2 Cost Analysis: Arbitrum vs Optimism vs zkSync
+Filename: layer-2-cost-comparison-2026.jpg
+Prompt:
+Modern DeFi protocol infrastructure diagram, smart contract network visualization, abstract geometric shapes, blue gradient background, technical precision aesthetic, no text --ar 16:9 --style raw --v 6
