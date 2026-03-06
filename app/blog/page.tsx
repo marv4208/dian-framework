@@ -6,6 +6,9 @@ export const metadata = {
   description: 'Daily analysis, protocol updates, and integration patterns for connecting traditional finance with DeFi.',
 };
 
+// Revalidate every 1 hour - ensures new articles appear automatically
+export const revalidate = 3600;
+
 export default function BlogPage() {
   const allPosts = getAllPosts();
 
