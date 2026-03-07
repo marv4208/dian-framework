@@ -1,5 +1,5 @@
 {
-  "lastTopicIndex": 7,
+  "lastTopicIndex": 8,
   "publishedSlugs": [
     "institutional-defi-lending-q1-2026",
     "layer-2-cost-comparison-2026",
@@ -8,6 +8,7 @@
     "corporate-stablecoin-yield-strategies",
     "rwa-tokenization-2026",
     "ethereum-shanghai-institutional-staking",
-    "zk-proofs-defi-privacy"
+    "zk-proofs-defi-privacy",
+    "erc-4337-corporate-wallets"
   ]
 }

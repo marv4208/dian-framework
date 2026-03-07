@@ -68,3 +68,10 @@ Article: Privacy-Preserving DeFi with Zero-Knowledge Proofs
 Filename: zk-proofs-defi-privacy.jpg
 Prompt:
 Cybersecurity shield with blockchain elements, cryptographic protection layers, geometric security visualization, blue teal colors, professional security aesthetic, no text --ar 16:9 --style raw --v 6
+
+
+=== 2026-03-07T15:00:05.370Z ===
+Article: Account Abstraction (ERC-4337) for Corporate Wallets
+Filename: erc-4337-corporate-wallets.jpg
+Prompt:
+Professional blockchain integration architecture, corporate network connecting to DeFi protocols, geometric data flows, blue teal gradient, clean minimal fintech aesthetic, no text --ar 16:9 --style raw --v 6
